@@ -13,7 +13,7 @@ class SSL extends Component {
         'CryptoPro'   => 'frontend\components\ssl\DriverCryptoPro',
     ];
 
-    public function getDriver($driver) {
-        return new $this->driverMap[$driver]();
+    public function getDriver($driver, $hashAlgo) {
+        return new $this->driverMap[$driver]($hashAlgo);
     }   
 }

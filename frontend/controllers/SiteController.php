@@ -71,10 +71,10 @@ class SiteController extends Controller
 
         echo 'TEST';
 
-        $driver = Yii::$app->ssl->getDriver('OpenSSL');
+        $driver = Yii::$app->ssl->getDriver('OpenSSL', 'SHA1');
         var_dump($driver->verify('data', 'signature', 'cert'));
 
-        $driver = Yii::$app->ssl->getDriver('CryptoPro');
+        $driver = Yii::$app->ssl->getDriver('CryptoPro', 'SHA1');
         var_dump($driver->verify('data11', 'signaturesws', 'certef'));
         //return $this->render('index');
     }
