@@ -65,6 +65,20 @@ class SiteController extends Controller
         ];
     }
 
+    public function actionTest()
+    {
+
+
+        echo 'TEST';
+
+        $driver = Yii::$app->ssl->getDriver('OpenSSL');
+        var_dump($driver->verify('data', 'signature', 'cert'));
+
+        $driver = Yii::$app->ssl->getDriver('CryptoPro');
+        var_dump($driver->verify('data11', 'signaturesws', 'certef'));
+        //return $this->render('index');
+    }
+
     public function actionIndex()
     {
         return $this->render('index');

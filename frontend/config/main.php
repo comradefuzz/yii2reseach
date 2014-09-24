@@ -12,6 +12,10 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'ssl' => 'frontend\components\ssl\SSL',
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
